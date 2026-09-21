@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Swapnil Maharana — AI/ML Engineer, Full-Stack Developer and Computer Vision enthusiast.">
+  <title>Swapnil Maharana — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090b0e; --panel:#101318; --panel2:#151920; --text:#f4f7fa;
+      --muted:#9aa4b2; --line:#242a33; --accent:#20b9ff; --accent2:#6be0ff;
+      --max:1180px; --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:
+      radial-gradient(circle at 78% 5%,rgba(32,185,255,.12),transparent 28%),
+      radial-gradient(circle at 10% 20%,rgba(32,185,255,.07),transparent 25%),var(--bg);
+      color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),92%);margin:auto}
+    nav{position:fixed;z-index:20;top:18px;left:50%;transform:translateX(-50%);
+      width:min(1080px,92%);display:flex;align-items:center;justify-content:space-between;
+      padding:12px 16px 12px 20px;border:1px solid rgba(255,255,255,.08);
+      background:rgba(10,12,15,.72);backdrop-filter:blur(18px);border-radius:999px}
+    .brand{font-weight:800;letter-spacing:-.04em}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;color:#b9c1cc;font-size:13px}
+    .navlinks a:hover{color:var(--accent)}
+    .navbtn,.btn{border:1px solid rgba(32,185,255,.45);background:rgba(32,185,255,.09);
+      color:#eaf9ff;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600}
+    .navbtn:hover,.btn:hover{background:var(--accent);color:#041017}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+    .eyebrow{font-family:"DM Mono",monospace;color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+    h1{font-size:clamp(50px,7vw,92px);line-height:.94;letter-spacing:-.065em;max-width:800px}
+    h1 .blue{color:var(--accent)}
+    .hero-copy{font-size:18px;color:var(--muted);max-width:650px;margin:26px 0}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn.primary{background:var(--accent);color:#041017;border-color:var(--accent)}
+    .btn.secondary{background:transparent;border-color:var(--line)}
+    .portrait-shell{position:relative;width:min(360px,80vw);margin:auto}
+    .portrait-shell:before{content:"";position:absolute;inset:-18px;border:1px solid rgba(32,185,255,.22);border-radius:34px;transform:rotate(5deg)}
+    .portrait-shell:after{content:"";position:absolute;inset:-36px;border:1px solid rgba(255,255,255,.05);border-radius:42px;transform:rotate(-7deg)}
+    .portrait{position:relative;z-index:2;aspect-ratio:1/1.08;object-fit:cover;border-radius:30px;border:1px solid rgba(255,255,255,.1);filter:saturate(.9)}
+    .floating{position:absolute;z-index:3;bottom:-18px;left:-30px;background:var(--panel);border:1px solid var(--line);
+      border-radius:18px;padding:14px 16px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    .floating strong{display:block;font-size:14px}.floating small{color:var(--muted)}
+    section{padding:105px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+    .kicker{color:var(--accent);font:500 12px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.14em}
+    h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.05em;margin-top:10px}
+    .section-head p{color:var(--muted);max-width:460px}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .about-copy{font-size:18px;color:#c3cad4}
+    .about-copy p+p{margin-top:18px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+    .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+    .stat b{font-size:28px;color:var(--accent);display:block}.stat span{color:var(--muted);font-size:12px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:11px 14px;border:1px solid var(--line);background:var(--panel);border-radius:999px;color:#dce2e9;font-size:13px}
+    .chip:hover{border-color:rgba(32,185,255,.45);transform:translateY(-2px)}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{background:linear-gradient(145deg,#11151b,#0c0f13);border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:.3s}
+    .project:hover{transform:translateY(-5px);border-color:rgba(32,185,255,.35)}
+    .project.featured{grid-column:1/-1;padding:34px}
+    .project .num{font:500 12px "DM Mono",monospace;color:var(--accent)}
+    .project h3{font-size:26px;letter-spacing:-.03em;margin:12px 0}
+    .project p{color:var(--muted);font-size:14px;max-width:780px}
+    .metrics{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+    .metric{padding:12px 14px;border-radius:14px;background:#0a0d11;border:1px solid var(--line)}
+    .metric b{color:var(--accent);font-size:18px}.metric span{display:block;color:var(--muted);font-size:11px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.tag{font:400 11px "DM Mono",monospace;color:#b9c7d4;border:1px solid #29303a;padding:6px 8px;border-radius:7px}
+    .project-link{display:inline-flex;margin-top:22px;color:var(--accent);font-size:13px;font-weight:600}
+    .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cert{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:190px}
+    .cert .icon{width:38px;height:38px;border-radius:12px;background:rgba(32,185,255,.1);display:grid;place-items:center;color:var(--accent);margin-bottom:30px}
+    .cert h3{font-size:16px}.cert p{color:var(--muted);font-size:12px;margin-top:7px}.later{color:#66717f!important;margin-top:14px!important}
+    .timeline{border-left:1px solid var(--line);margin-left:10px;padding-left:30px;display:grid;gap:25px}
+    .edu{position:relative}.edu:before{content:"";position:absolute;left:-37px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(32,185,255,.08)}
+    .edu .year{font:500 11px "DM Mono",monospace;color:var(--accent)}.edu h3{margin:5px 0}.edu p{color:var(--muted);font-size:14px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+    .contact-card{background:linear-gradient(145deg,#12171d,#0b0e12);border:1px solid var(--line);border-radius:24px;padding:35px}
+    .contact-card h3{font-size:30px;letter-spacing:-.04em}.contact-card p{color:var(--muted);margin:15px 0 25px}
+    .contact-links{display:grid;gap:10px}.contact-links a{padding:14px;border:1px solid var(--line);border-radius:13px;color:#d9e0e8}.contact-links a:hover{border-color:rgba(32,185,255,.4);color:var(--accent)}
+    footer{padding:35px 0;color:#697481;font-size:12px;border-top:1px solid var(--line)}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){
+      .navlinks{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.hero{padding-top:120px}.portrait-shell{margin-top:20px}
+      .project-grid{grid-template-columns:1fr}.project.featured{grid-column:auto}.cert-grid{grid-template-columns:1fr 1fr}
+      .section-head{display:block}.section-head p{margin-top:18px}.stats{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){h1{font-size:49px}.cert-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.floating{left:5px}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="#home">SM<span>.</span></a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a><a href="#education">Education</a>
+  </div>
+  <a class="navbtn" href="#contact">Contact</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">AI / ML · Full-Stack · Computer Vision</div>
+      <h1>Building <span class="blue">intelligent</span> systems for real-world problems.</h1>
+      <p class="hero-copy">Hi, I'm Swapnil Maharana — an M.Tech Computer Science student focused on AI-driven healthcare, deep learning, computer vision, full-stack development and federated learning.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↗</a>
+        <a class="btn secondary" href="assets/Swapnil-Maharana-CV.pdf" download>Download CV ↓</a>
+      </div>
+    </div>
+    <div class="portrait-shell reveal">
+      <img class="portrait" src="assets/profile.png" alt="Swapnil Maharana">
+      <div class="floating"><strong>AI / ML Engineer</strong><small>Berhampur, Odisha · India</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">01 / About</div><h2>Turning ideas into working systems.</h2></div>
+      <p>A profile built around applied machine learning, scalable applications and practical problem solving.</p></div>
+    <div class="about">
+      <div class="about-copy reveal">
+        <p>I specialize in AI-driven healthcare systems, full-stack development and federated learning. My work combines machine learning with usable software, from model development through real-time deployment.</p>
+        <p>I enjoy working across computer vision, deep learning, NLP and system design, with a focus on building applications that are measurable, explainable and useful.</p>
+      </div>
+      <div class="reveal">
+        <div class="stats">
+          <div class="stat"><b>87.6%</b><span>FedMed accuracy</span></div>
+          <div class="stat"><b>96.6%</b><span>Best HAR accuracy</span></div>
+          <div class="stat"><b>0.91</b><span>FedMed AUC</span></div>
+        </div>
+        <div id="skills" style="margin-top:35px">
+          <div class="kicker" style="margin-bottom:14px">Core stack</div>
+          <div class="skills">
+            <span class="chip">Python</span><span class="chip">Java</span><span class="chip">C</span>
+            <span class="chip">PyTorch</span><span class="chip">React</span><span class="chip">FastAPI</span>
+            <span class="chip">OpenCV</span><span class="chip">Grad-CAM</span><span class="chip">Rasa NLP</span>
+            <span class="chip">Flower</span><span class="chip">FedAvg</span><span class="chip">SQLite</span>
+            <span class="chip">Git</span><span class="chip">Render</span><span class="chip">DSA</span><span class="chip">OOP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">02 / Selected work</div><h2>Projects with purpose.</h2></div>
+      <p>Applied AI projects spanning healthcare, agriculture, activity recognition and explainable computer vision.</p></div>
+    <div class="project-grid">
+      <article class="project featured reveal">
+        <div class="num">01 — FEATURED</div>
+        <h3>FedMed — Privacy-Aware Multi-Disease Chest X-Ray Classification</h3>
+        <p>A production-ready full-stack AI healthcare system using DenseNet121 and PyTorch, with FastAPI backend and React frontend for real-time inference. The architecture includes privacy-aware processing, secure authentication, analytics, PDF reporting and a federated-learning-ready design.</p>
+        <div class="metrics">
+          <div class="metric"><b>87.6%</b><span>Accuracy</span></div><div class="metric"><b>86.9%</b><span>F1-score</span></div><div class="metric"><b>0.91</b><span>AUC</span></div>
+        </div>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">DenseNet121</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">SQLite</span><span class="tag">Flower</span><span class="tag">FedAvg</span><span class="tag">Bcrypt</span></div>
+        <a class="project-link" href="https://github.com/Swapnil4228/FedMed_Render" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </article>
+      <article class="project reveal">
+        <div class="num">02</div><h3>Smart Farmer Assistant</h3>
+        <p>Multilingual agricultural decision-support system for crop yield prediction, disease classification, crop recommendation, weather/market data and profit-based recommendations.</p>
+        <div class="metrics"><div class="metric"><b>R² 0.9626</b><span>Yield prediction</span></div><div class="metric"><b>93.26%</b><span>Classification</span></div></div>
+        <div class="tags"><span class="tag">ML</span><span class="tag">Rasa NLP</span><span class="tag">APIs</span><span class="tag">Decision Intelligence</span></div>
+      </article>
+      <article class="project reveal">
+        <div class="num">03</div><h3>Human Activity Recognition</h3>
+        <p>Machine-learning classification system using a sensor dataset with 7000+ samples and 500+ features. Compared Logistic Regression, SVM, Decision Tree and Random Forest with GridSearchCV.</p>
+        <div class="metrics"><div class="metric"><b>96.6%</b><span>Best accuracy · Linear SVM</span></div></div>
+        <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">SVM</span><span class="tag">GridSearchCV</span><span class="tag">ML</span></div>
+        <a class="project-link" href="https://github.com/Swapnil4228/Human-Activity-Recognition-Prediction" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </article>
+      <article class="project reveal">
+        <div class="num">04</div><h3>Scene Classification & Explainable AI</h3>
+        <p>CNN-based scene classification with residual blocks and Grad-CAM heatmaps to make visual predictions more interpretable and support debugging.</p>
+        <div class="tags"><span class="tag">CNN</span><span class="tag">Computer Vision</span><span class="tag">Grad-CAM</span><span class="tag">Explainable AI</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">03 / Credentials</div><h2>Certificates.</h2></div>
+      <p>The certificate images can be added later. The structure is ready for a visual certificate gallery.</p></div>
+    <div class="cert-grid">
+      <article class="cert reveal"><div class="icon">✦</div><h3>Intro to Deep Learning</h3><p>Kaggle · 2025</p><p class="later">Certificate image — add later</p></article>
+      <article class="cert reveal"><div class="icon">⌁</div><h3>Foundations of Cybersecurity</h3><p>Google · Coursera</p><p class="later">Certificate image — add later</p></article>
+      <article class="cert reveal"><div class="icon">◉</div><h3>Explainable AI (Grad-CAM)</h3><p>Coursera</p><p class="later">Certificate image — add later</p></article>
+      <article class="cert reveal"><div class="icon">✓</div><h3>Software Testing</h3><p>Microsoft & NIIT</p><p class="later">Certificate image — add later</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">04 / Education</div><h2>Academic journey.</h2></div>
+      <p>A timeline of the education listed in the current CV.</p></div>
+    <div class="timeline">
+      <div class="edu reveal"><div class="year">2024 — 2026</div><h3>Master of Technology — Computer Science</h3><p>Gandhi Institute of Technology and Management, Visakhapatnam</p></div>
+      <div class="edu reveal"><div class="year">2024</div><h3>Bachelor of Technology</h3><p>National Institute of Science and Technology, Berhampur</p></div>
+      <div class="edu reveal"><div class="year">2020</div><h3>Higher Secondary</h3><p>Council of Higher Secondary Education · The Mother’s International HS School</p></div>
+      <div class="edu reveal"><div class="year">2018</div><h3>Matriculation</h3><p>Central Board of Secondary Education · Harobino Vidya Bhawan, Berhampur</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="contact-card reveal">
+        <div class="kicker">05 / Contact</div><h3>Let's build something intelligent.</h3>
+        <p>Open to conversations around AI/ML, software development, research and meaningful technical projects.</p>
+        <div class="actions"><a class="btn primary" href="mailto:swapnilmaharana999@gmail.com">Email me ↗</a><a class="btn secondary" href="assets/Swapnil-Maharana-CV.pdf" download>Get my CV ↓</a></div>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-links">
+          <a href="mailto:swapnilmaharana999@gmail.com">✉ &nbsp; swapnilmaharana999@gmail.com</a>
+          <a href="tel:+916371953053">☎ &nbsp; +91 6371953053</a>
+          <a href="https://github.com/Swapnil4228" target="_blank" rel="noopener">⌘ &nbsp; github.com/Swapnil4228</a>
+          <div style="padding:14px;color:#7f8a97;font-size:13px">📍 &nbsp; Berhampur, Odisha, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Swapnil Maharana · Built around AI, engineering and curiosity.</div></footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
